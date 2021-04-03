@@ -34,6 +34,9 @@ def get_json():
 
     return "请求已插入队列"
 
+    if  request.method == 'GET':
+        return "服务器正常，可以发送训练请求"
+
 
 
 

@@ -1,0 +1,39 @@
+dump 和 dumps 都实现了序列化
+load 和 loads 都实现反序列化
+
+变量从内存中变成可存储或传输的过程称之为序列化
+序列化是将对象状态转化为可保存或可传输格式的过程。
+
+变量内容从序列化的对象重新读到内存里称之为反序列化
+反序列化是流转换为对象。
+
+load：针对文件句柄，将json格式的字符转换为dict，从文件中读取 (将string转换为dict)
+loads：针对内存对象，将string转换为dict (将string转换为dict)
+
+dump：将dict类型转换为json字符串格式，写入到文件 （易存储）
+dumps：将dict转换为string (易传输)
+
+
+
+插入和更新cursor.execute(sql)一定要使用db.commit() 数据才能更改
+
+
+redis列表操作：
+    lpush    从左边开始添加
+    rpush    从右边开始添加
+    lpop     从左边删除第一个
+    rpop     从右边删除第一个
+    redis不保存空列表
+修改默认端口和模式：在/etc/redis/redis.conf里修改
+        port 7002
+        protected-mode no
+        bind 0.0.0.0 ::1
+    重启redis服务后输入redis-server /etc/redis/redis.conf 此时redis以守护进程形式在后台运行
+
+
+
+
+Python打开文件时选择’a'模式表示追加，'w'则是直接覆盖
+
+
+
