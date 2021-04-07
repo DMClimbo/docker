@@ -9,7 +9,7 @@ def start_process(cmd):
     os.system(cmd)
 
 
-#启动后台和检测队列进程
+#启动flask服务器和检测队列进程
 if __name__ == "__main__":
     #启动flask后端
     Server = Process(target=start_process, args=(Start_server,))

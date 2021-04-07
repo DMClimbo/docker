@@ -1,4 +1,3 @@
-
 from multiprocessing import Process
 import os 
 import yaml, json
@@ -6,8 +5,9 @@ import requests
 import pymysql
 import zipfile
 
+#根据json文件配置训练环境
 def handle_json(json_dict):
-    #创建文件夹保存训练参数和结果
+        #创建文件夹保存训练参数和结果
         outputdir = r'/cv/output/' +  json_dict["USER"] + '_' + json_dict["MODEL_NAME"]
         os.mkdir(outputdir)
         
@@ -20,7 +20,7 @@ def handle_json(json_dict):
         yaml_file = open(outputdir + '/config.yaml','w')
         yaml.safe_dump(json_dict, stream=yaml_file, default_flow_style=False)
 
-        print("生成配置文件")
+        print("已生成配置文件")
         return "python /cv/project/train.py --config " + outputdir + "/config.yaml"
         # return True
 
